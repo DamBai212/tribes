@@ -1,0 +1,31 @@
+<%= f.fields_for :lectures, @course.lectures.build do |lecture_field| %>
+  <%= lecture_field.label :title %>
+  <br />
+  <%= lecture_field.text_field :title %>
+
+  <br />
+  <br />
+
+  <%= lecture_field.label :category %>
+  <br />
+  <%= lecture_field.text_field :category %>
+
+  <br />
+  <br />
+
+  <%= lecture_field.label :summary %>
+  <br />
+  <%= lecture_field.text_area :summary %>
+
+  <br />
+  <br />
+
+  <%= lecture_field.label :position %>
+  <br />
+  <%= lecture_field.text_field :position %>
+
+  <br />
+  <br />
+
+  <%= lecture_field.hidden_field :course_id, value: @course.id %>
+<% end %>

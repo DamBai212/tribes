@@ -1,0 +1,18 @@
+<h1><%= @course.title %></h1>
+
+<h3>Category: <%= @course.category %></h3>
+
+<h3>Lectures</h3>
+
+<ul>
+  <% @lectures.each do |l| %>
+    <li>
+      <h4>
+        <%= l.position %>. <%= l.title %> || <%= l.category %>
+      </h4>
+      <p>
+        <%= l.summary %>
+      </p>
+    </li>
+  <% end %>
+</ul>

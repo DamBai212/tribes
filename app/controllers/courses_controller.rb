@@ -7,15 +7,17 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
+    @course.lectures.build
   end
 
   def create
     @course = Course.create(course_params)
+    
     redirect_to @course
   end
 
   def show
-
+    @lectures = @course.lectures
   end
 
   def edit
@@ -41,7 +43,13 @@ class CoursesController < ApplicationController
     params.require(:course).permit(
       :title,
       :category,
-      :created_on
+      :created_on,
+      lectures_attributes: [
+        :title,
+        :category,
+        :summary,
+        :position
+      ]
     )
   end
 end
