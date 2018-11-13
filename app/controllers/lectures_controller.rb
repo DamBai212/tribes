@@ -43,7 +43,10 @@ class LecturesController < ApplicationController
       :category,
       :summary,
       :position,
-      :course_id
-    )
+      :course_id,
+  lectures_attributes: [:id, :title,:category,
+      :summary,
+      :position,
+      :course_id, :_destroy])
   end
 end
